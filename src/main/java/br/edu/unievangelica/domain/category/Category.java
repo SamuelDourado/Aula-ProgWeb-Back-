@@ -28,6 +28,6 @@ public class Category implements Serializable {
     @Column(name = "nome")
     @Getter
     @Setter
-    private String nome;
+    private String name;
 }
 

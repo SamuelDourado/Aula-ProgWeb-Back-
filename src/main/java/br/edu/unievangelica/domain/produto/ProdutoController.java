@@ -1,4 +1,4 @@
-package br.edu.unievangelica.domain.category;
+package br.edu.unievangelica.domain.produto;
 
 import br.edu.unievangelica.core.controller.ResponseAbstractController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,30 +8,29 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/category")
-public class CategoryController extends ResponseAbstractController{
+@RequestMapping(value = "/produto")
+public class ProdutoController extends ResponseAbstractController{
     @Autowired
-    CategoryService categoryService;
+    ProdutoService produtoService;
 
     @GetMapping
     public ResponseEntity<?> findAll(){
-        return jsonResponse(categoryService.findAll());
+        return jsonResponse(produtoService.findAll());
     }
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<?> findById(@PathVariable long id){
         return
-                new ResponseEntity<>(categoryService.findById(id), HttpStatus.OK);
+                new ResponseEntity<>(produtoService.findById(id), HttpStatus.OK);
     }
 
     @DeleteMapping(value="/{id}")
     public ResponseEntity<?> delete(@PathVariable long id){
-        return jsonResponse(categoryService.delete(id));
+        return jsonResponse(produtoService.delete(id));
     }
 
     @PostMapping
-    public ResponseEntity<?> save(@Validated @RequestBody Category category){
-        return jsonResponse(categoryService.save(category));
+    public ResponseEntity<?> save(@Validated @RequestBody Produto produto){
+        return jsonResponse(produtoService.save(produto));
     }
-
 }
