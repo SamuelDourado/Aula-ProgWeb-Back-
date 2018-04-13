@@ -18,4 +18,14 @@ public class CategoryService {
     public Category findById(long id){
         return categoryRepository.findOne(id);
     }
+
+    public boolean delete(long id){
+        categoryRepository.delete(id);
+        return true;
+    }
+
+    public Category save(Category category){
+        return categoryRepository.save(category);
+
+    }
 }
