@@ -23,8 +23,8 @@ public class ProdutoService {
         return true;
     }
 
-    public Produto save(Produto category){
-        return produtoRepository.save(category);
+    public Produto save(Produto produto){
+        return produtoRepository.save(produto);
 
     }
 

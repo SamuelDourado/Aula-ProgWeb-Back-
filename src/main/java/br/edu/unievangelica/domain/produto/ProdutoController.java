@@ -15,6 +15,7 @@ public class ProdutoController extends ResponseAbstractController{
 
     @GetMapping
     public ResponseEntity<?> findAll(){
+        //System.out.println("Dentro do FindAll");
         return jsonResponse(produtoService.findAll());
     }
 
@@ -31,6 +32,7 @@ public class ProdutoController extends ResponseAbstractController{
 
     @PostMapping
     public ResponseEntity<?> save(@Validated @RequestBody Produto produto){
+        System.out.println("Dentro do SAlvar");
         return jsonResponse(produtoService.save(produto));
     }
 }

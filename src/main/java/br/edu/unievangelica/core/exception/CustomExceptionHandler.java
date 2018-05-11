@@ -29,6 +29,8 @@ public class CustomExceptionHandler {
         return this.formatDefaultResponse(e, jsonResponseService.getHttpStatus());
     }
     private ResponseEntity<?> formatDefaultResponse(Exception e, HttpStatus status){
+        System.out.println("EXCEPTION: "+e.getClass());
+        System.out.println(e.getMessage());
         return this.formatDefaultResponse("", status);
     }
 

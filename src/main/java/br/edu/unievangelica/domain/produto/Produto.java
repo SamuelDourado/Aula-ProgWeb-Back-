@@ -1,5 +1,6 @@
 package br.edu.unievangelica.domain.produto;
 
+import br.edu.unievangelica.domain.category.Category;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -43,9 +44,15 @@ public class Produto implements Serializable {
     @Setter
     private String descricao;
 
-    @NotEmpty
     @Column(name = "preco")
     @Getter
     @Setter
     private float preco;
+
+    @Column(name = "category")
+    @Getter
+    @Setter
+    private long category;
+
+
 }
